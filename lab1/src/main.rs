@@ -1,10 +1,21 @@
-// paste this file into main.rs
+use std::fs;
 
-fn stats(text: &str) -> [u32; 26] {
-}
+
+
+
+//fn stats(text: &str) -> [u32; 26] {
+
+//}
 
 fn is_pangram(counts: &[u32]) -> bool {
+    return true;
+}
 
+fn read_file(file_name: &String) -> Vec<char>{
+    let file_content = fs::read_to_string("file.txt").unwrap();
+    let char_vec: Vec<char> = file_content.chars().collect();
+
+    return char_vec;
 }
 
 // call this function from main
@@ -18,7 +29,7 @@ pub fn run_pangram() {
 #[cfg(test)] // this is a test module
 mod tests
 {
-    // tests are separated modules, yuou must import the code you are testing
+    // tests are separated modules, you must import the code you are testing
     use super::*;
 
     #[test]
@@ -117,6 +128,7 @@ mod tests
 }
 
 fn main() {
+
     run_pangram();
 }
 
