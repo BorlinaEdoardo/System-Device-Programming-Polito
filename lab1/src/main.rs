@@ -1,12 +1,4 @@
-use std::fs;
-
-
-
-
-//fn stats(text: &str) -> [u32; 26] {
-fn stats(text: &str){
-    return ;
-}
+use std::{env, fs};
 
 fn is_pangram(counts: &[u32]) -> bool {
     // create a simble table for each letter in the alphabet
@@ -21,19 +13,29 @@ fn is_pangram(counts: &[u32]) -> bool {
     return pangram == 0;
 }
 
-fn read_file(file_name: &String) -> Vec<char>{
+fn read_file(file_name: &String) -> [u32; 26]{
     let file_content = fs::read_to_string(file_name).unwrap();
     let char_vec: Vec<char> = file_content.chars().collect();
+    let mut vec:[u32; 26] = [0; 26];
 
-    return char_vec;
+    for c in char_vec {
+        let unicode_val = c as u32 - 'a' as u32;
+        vec[unicode_val as usize] += 1;
+    }
+
+    return vec;
 }
 
 // call this function from main
 // load here the contents of the file
 pub fn run_pangram() {
     // read file content
-
-
+    let args: Vec<String> = env::args().collect();
+    if( is_pangram(&read_file(&args[1])) ){
+        println!("Pangram reads from file {}", args[1]);
+    } else{
+        println!("No Pangram reads from file {}", args[1]);
+    }
 }
 
 
@@ -82,78 +84,9 @@ mod tests
         let counts = [1; 25];
         assert!(!is_pangram(&counts));
     }
-
-   /* #[test]
-    fn test_stats_on_full_alphabet() {
-        let counts = stats("abcdefghijklmnopqrstuvwxyz");
-        for c in counts {
-            assert!(c == 1);
-        }
-    }
-
-    #[test]
-    fn test_stats_on_empty_string() {
-        let counts = stats("");
-        for c in counts {
-            assert!(c == 0);
-        }
-    }
-
-    #[test]
-    fn test_stats_missing_char() {
-        let counts = stats("abcdefghijklmnopqrstuvwxy");
-        for c in counts.iter().take(25) {
-            assert!(*c == 1);
-        }
-        assert!(counts[25] == 0);
-
-    }
-
-    #[test]
-    fn test_stats_on_full_tring() {
-        let contents = "The quick brown fox jumps over the lazy dog";
-        let counts = stats(contents);
-        for c in counts {
-            assert!(c > 0);
-        }
-    }
-
-    #[test]
-    fn test_stats_with_punctuation() {
-        let contents = "The quick brown fox jumps over the lazy dog!";
-        let counts = stats(contents);
-        for c in counts {
-            assert!(c > 0);
-        }
-    }
-
-    #[test]
-    fn test_missing_char_on_full_string() {
-        let contents = "The quick brown fox jumps over the laz* dog";
-        let counts = stats(contents);
-        println!("{:?}", counts);
-        for (i, c) in counts.iter().enumerate() {
-            if i == 24 {
-                assert!(*c == 0);
-            } else {
-                assert!(*c > 0);
-            }
-
-        }
-    }
-
-    #[test]
-    fn test_is_pangram() {
-        let counts = stats("The quick brown fox jumps over the lazy dog");
-        assert!(is_pangram(&counts));
-    }
-
-
-    */
 }
 
 fn main() {
-
     run_pangram();
 }
 
