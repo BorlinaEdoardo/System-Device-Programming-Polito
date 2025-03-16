@@ -9,11 +9,20 @@ fn stats(text: &str){
 }
 
 fn is_pangram(counts: &[u32]) -> bool {
-    return true;
+    // create a simble table for each letter in the alphabet
+    let mut pangram = 26;
+
+    for val in counts {
+        if(*val > 0){
+            pangram -= 1;
+        }
+    }
+
+    return pangram == 0;
 }
 
 fn read_file(file_name: &String) -> Vec<char>{
-    let file_content = fs::read_to_string("file.txt").unwrap();
+    let file_content = fs::read_to_string(file_name).unwrap();
     let char_vec: Vec<char> = file_content.chars().collect();
 
     return char_vec;
@@ -22,6 +31,9 @@ fn read_file(file_name: &String) -> Vec<char>{
 // call this function from main
 // load here the contents of the file
 pub fn run_pangram() {
+    // read file content
+
+
 }
 
 
@@ -35,8 +47,8 @@ mod tests
 
     // ex 1 test functions:
     #[test]
-    fn test_file_read(){
-        let filename = "sentence.txt".to_string();
+    fn test_file_reading(){
+        let filename = "./sentence.txt".to_string();
         let char_vec: Vec<char> = read_file(&filename);
 
         println!("{:?}", char_vec);
