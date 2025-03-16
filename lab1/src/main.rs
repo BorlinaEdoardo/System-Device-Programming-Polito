@@ -1,5 +1,6 @@
 use std::{env, fs};
 
+// ex1 functions
 fn is_pangram(counts: &[u32]) -> bool {
     // create a simble table for each letter in the alphabet
     let mut pangram = 26;
@@ -38,9 +39,39 @@ pub fn run_pangram() {
     }
 }
 
+// Ex 2 functions
+// Convert not allowed charatcter
+fn conv(c: char) -> char {
+    const SUBS_I: &str = "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż";
+    const SUBS_O: &str = "aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz";
 
-// please note, code has been splittend in simple functions in order to make testing easier
+    let mut ret_val:char = 'a' as char;
+    let s_in = SUBS_I.to_string();
+    let s_out = SUBS_O.to_string();
 
+    let index = s_in.find(c);
+
+    if (index.is_none()){
+            if(('a'..='z').contains(&c) || ('1'..='9').contains(&c)) {
+                ret_val = c;
+            } else {
+                ret_val = '-';
+            }
+    } else {
+        ret_val = s_out.chars().collect::<Vec<_>>()[index.unwrap()];
+    }
+
+    return ret_val;
+}
+
+// return the "slug" version of the imput string
+fn slugify(s: &str) -> String {
+    return "Not Yet Implemented".to_string();
+}
+
+
+
+// ex 1 testing
 #[cfg(test)] // this is a test module
 mod tests
 {
@@ -51,7 +82,7 @@ mod tests
     #[test]
     fn test_file_reading(){
         let filename = "./sentence.txt".to_string();
-        let char_vec: Vec<char> = read_file(&filename);
+        let char_vec: [u32; 26] = read_file(&filename);
 
         println!("{:?}", char_vec);
     }
@@ -86,7 +117,21 @@ mod tests
     }
 }
 
+// ex 2 testing
+#[cfg(test2)]
+mod tests{
+    #[test]
+    fn test_conv_valid_char(){
+        let c = 'a';
+        assert_eq!('a', conv(c));
+    }
+
+
+}
+
+
 fn main() {
+    // ex 1
     run_pangram();
 }
 
