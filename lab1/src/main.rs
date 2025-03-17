@@ -45,23 +45,19 @@ fn conv(c: char) -> char {
     const SUBS_I: &str = "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż";
     const SUBS_O: &str = "aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz";
 
-    let mut ret_val:char = 'a' as char;
-    let s_in = SUBS_I.to_string();
-    let s_out = SUBS_O.to_string();
+    let s_in_chars: Vec<char> = SUBS_I.chars().collect();
+    let s_out_chars: Vec<char> = SUBS_O.chars().collect();
 
-    let index = s_in.find(c);
-
-    if (index.is_none()){
-            if(('a'..='z').contains(&c) || ('1'..='9').contains(&c)) {
-                ret_val = c;
-            } else {
-                ret_val = '-';
-            }
-    } else {
-        ret_val = s_out.chars().collect::<Vec<_>>()[index.unwrap()];
+    if let Some(index) = s_in_chars.iter().position(|&x| x == c) {
+        return s_out_chars[index];
     }
 
-    return ret_val;
+    // Handle non-matching characters
+    if c.is_ascii_alphanumeric() {
+        return c;
+    } else {
+        return '-';
+    }
 }
 
 // return the "slug" version of the imput string
@@ -115,19 +111,28 @@ mod tests
         let counts = [1; 25];
         assert!(!is_pangram(&counts));
     }
-}
 
-// ex 2 testing
-#[cfg(test2)]
-mod tests{
+    // ex 2 testing
     #[test]
     fn test_conv_valid_char(){
-        let c = 'a';
-        assert_eq!('a', conv(c));
+        assert_eq!('a', conv('a'));
+        assert_eq!('1', conv('1'));
     }
 
+    #[test]
+    fn test_conv_invalid_char(){
+        assert_eq!('-', conv('.'));
+        assert_eq!('-', conv(','));
+    }
 
+    #[test]
+    fn test_conv_accent_chars(){
+        assert_eq!('e', conv('è'));
+        assert_eq!('e', conv('ę'));
+    }
 }
+
+
 
 
 fn main() {
