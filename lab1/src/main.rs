@@ -6,7 +6,7 @@ fn is_pangram(counts: &[u32]) -> bool {
     let mut pangram = 26;
 
     for val in counts {
-        if(*val > 0){
+        if *val > 0 {
             pangram -= 1;
         }
     }
@@ -32,7 +32,7 @@ fn read_file(file_name: &String) -> [u32; 26]{
 pub fn run_pangram() {
     // read file content
     let args: Vec<String> = env::args().collect();
-    if( is_pangram(&read_file(&args[1])) ){
+    if is_pangram(&read_file(&args[1])) {
         println!("Pangram reads from file {}", args[1]);
     } else{
         println!("No Pangram reads from file {}", args[1]);
@@ -61,7 +61,7 @@ fn conv(c: char) -> char {
 }
 
 // return the "slug" version of the imput string
-fn slugify(s: &str) -> String {
+fn slugify(_s: &str) -> String {
     return "Not Yet Implemented".to_string();
 }
 
