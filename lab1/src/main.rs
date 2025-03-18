@@ -152,8 +152,6 @@ mod tests
 }
 
 
-
-
 fn main() {
     // ex 1
     run_pangram();
