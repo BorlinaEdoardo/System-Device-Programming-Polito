@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="Lab 2 ex 3: first commit">
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/.idea/lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/Esercitazione 2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/sentence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/.rustc_info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/CACHEDIR.TAG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.cargo-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-1ad3d8678a34095f/bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-1ad3d8678a34095f/bin-lab1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-1ad3d8678a34095f/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-6dfb49b6ae75b0cd/bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-6dfb49b6ae75b0cd/bin-lab1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-6dfb49b6ae75b0cd/dep-bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-6dfb49b6ae75b0cd/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-6dfb49b6ae75b0cd/output-bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-95893fcf42ff25bf/dep-test-bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-95893fcf42ff25bf/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-95893fcf42ff25bf/test-bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-95893fcf42ff25bf/test-bin-lab1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-9cd861c4b4063ccd/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-9cd861c4b4063ccd/test-bin-lab1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/.fingerprint/lab1-9cd861c4b4063ccd/test-bin-lab1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/deps/lab1-6dfb49b6ae75b0cd.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/deps/lab1-6dfb49b6ae75b0cd.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/deps/lab1-95893fcf42ff25bf.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/deps/lab1-95893fcf42ff25bf.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/0sg2yjdi3q0g456mw1k1gh2aq.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/17vosyzmvabk0jrqqw6v47d8h.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/1cv1uiayozn4qthu34fjcnl9e.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/1lrkpn5akkv8t81jwwhkrr5yj.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/23sahjzi2wmq60jyrjfdlicso.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/290xp2oo71kihz53zs64zuny5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/35kr6fclua7rl6hsfuqkwp0k6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/3nmf0t3l2x2syhzxeh6njf9rn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/42bke5i4cnd49iheepfli8x9c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/42ebp8b5u178al6cxwt8nptk0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/5k8dmcm78lahrahb8epfuk0n0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/68z7xhr8qntuq7ji3hj0usqy0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/69cmyf2tbqgs7n8u5b4fdwelf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/6srdghzdni6zrgbt5oqaaa5ot.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/7i8arpyi8hgal80140ujams2r.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/87gjrygckewy3g7zdtfgpi4dm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/8dvxu33a9eqlt74bts8sqg25t.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/9c7dyj9gwoq69dgzukqk3cb49.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/9iwatjzsx7q9z3xfnu9f8gm8b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/arvifp2au3lxhxmewek60s3k5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/aw8wcxd55un1rf664oj72u74g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/b3t3020n6lr0aztyeqztrekxb.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/bk4uqwk4xd9xgnn0q3yflgn0s.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/dar1qchz5v0w0dnv97lu4asd5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/djijo15dqsogooqc59h0cvn26.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/dy0xca783cdevt1rp3sy06hj3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/eovvtnv2uett4fz1b32oqlsmx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/eqhtogaeekw8r72khzq6jglqm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/ery2w4cmb8rimwdwb966mfag7.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/eu0rmmr4qt83ayyi64lpawlop.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/ex74f43lzzdx8774oyyoiieei.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/f0wce6tkm8psjr1rr6qeaf49g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw-60e98r1oxiz7cxt6pc09t0h2y/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-0sy8qfmew433x/s-h5k3ep3u13-1a32ajw.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/03a5zlryzoa6j7lcgppl9ts0b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/08wi9naftpjzvuxap18b5jlvu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/16brxmpqi9q7xfkrwt9yorsai.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/19op9ny2olpafos2mtvkmnqfu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/1cjwo3br2v2gndwpdoq2duojw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/1i682sftxio0olqswffi5u2mv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/1whgmvdm6sz42disl07fkc99u.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/1y5taehfnqg0us4e8nptd7bgt.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/21ghxc6x9elq98e6g35eak60f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/2ajyf5bgo9fp838g58u1ncr67.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/2axhec1o65k9uvg97cjpkyz09.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/2ho4ximg0jxgr1wtpacm7ghy9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/2udngv8xkbv7vv2zz5r34wr8n.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/34imor6iahrm25juyeiu1kykb.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/3nubkjn5oy8841c76t49bvm7j.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/4om8u152jthaie9zuju6loflf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/4r4wubz3wcsrii3yuqrvzv101.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/55p8dvkdu9se38ja3jq0s39m2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/63oezuhkt5ww545aw31u6dblf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/63uooz4xcrbxgxbyscwju8r0t.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/640lqkdmb7qg1rim6r2u0bgan.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/6dsjw75jzeficy77f17wxyl3x.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/6j5rep64x90dmvcdxig4ryz8h.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/6lgw8fdxogfqb0pwldb7va8d9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/6ra9xo0noejpjltu62q7c7shl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/6sag9vki74zbdyn29a0tubuia.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/74p660jd30icwyfwc7kxl7y4c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/75az4zqx628otmfmjbrk968kh.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/7azoq46tu2mnl3g3vfgjocpn9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/7uv15pfwfd1trn2glkujm6te5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/81oxgstmmf00nyblfmjqjtwwm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/81svcculxbmq4rava67njl55y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/8phpenba15e4jvp7wl23oriau.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/9fw1bqq0067imjyi57se8taiy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/9z629zt91j3a37y8bkx55o597.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/a0m16muyoub4smtdjk29oklqv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/a2wm5mrciykqshqwyxvmyiq9x.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/afnlixszuesq2dxyhrinthzsy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/ak2eylesotcyjoj7ks7q25231.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/aqscji5vch1pohegv89s2u7l6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/b0ah909tqd018jedr5yq65h9c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/b6f77yhqhpgz6n0azuh45q62h.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/blyx4sgt400cur87gie7a3z63.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/byg9hc4mkks889cpcjxscamz4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/ca5kedksxmhj9ulmzizm102ri.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/d7bat1w8vejzcwuoc5u2f92xy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/dazl5xh9vkx6fwcwkh0i75gj5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/dhtnb4kzqgaqw6vtlfhav3onl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/dycnkyvddtzfndiltx8cmwev2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/e33ioap6vo7asmonsjb3onkpo.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/ebaezq60qi504fc99g4v24a9k.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx-bvhg6psxkggycl9pzvlmc6123/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/incremental/lab1-2yazo1d99o8al/s-h5l7g0m4cn-1ip58zx.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/lab1.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab2_ex1&amp;2/target/debug/lab1.exe" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BorlinaEdoardo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/BorlinaEdoardo/System-Device-Programming-Polito.git",
+    "accountId": "1f1bc82b-a8c5-4789-91bf-0c7154a305b8"
+  }
+}]]></component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="TAktZAJa" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2uUm5wwKSCrhqYRBJ2hoilHyoJ0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package ex3 --bin ex3" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="" />
+      <created>1742311347362</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742311347362</updated>
+      <workItem from="1742311349727" duration="171000" />
+    </task>
+    <task id="LOCAL-00001" summary="Lab 2 ex 3: first commit">
+      <option name="closed" value="true" />
+      <created>1742311377688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311377688</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lab 2 ex 3: first commit">
+      <option name="closed" value="true" />
+      <created>1742311470912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311470912</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lab 2 ex 3: first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 ex 3: first commit" />
+  </component>
+</project>
