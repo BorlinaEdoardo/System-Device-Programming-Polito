@@ -61,8 +61,20 @@ fn conv(c: char) -> char {
 }
 
 // return the "slug" version of the imput string
-fn slugify(_s: &str) -> String {
-    return "Not Yet Implemented".to_string();
+fn slugify(s: &str) -> String {
+    let chars = s.to_string().to_lowercase().chars().collect::<Vec<char>>();
+    let mut ret_val = String::new();
+    let mut prev_c = '_';
+    let mut conv_c;
+    for c in chars  {
+        conv_c = conv(c);
+        if conv_c != '-' || conv_c != prev_c {
+            ret_val.push(conv_c);
+        }
+
+        prev_c = conv_c;
+    }
+    return ret_val;
 }
 
 
@@ -129,6 +141,13 @@ mod tests
     fn test_conv_accent_chars(){
         assert_eq!('e', conv('è'));
         assert_eq!('e', conv('ę'));
+    }
+
+    #[test]
+    fn test_slugify(){
+        assert_eq!(slugify("hello world"), "hello-world");
+        assert_eq!(slugify("ABCD    ,.///àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż"),
+                   "ABCD-aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz");
     }
 }
 
