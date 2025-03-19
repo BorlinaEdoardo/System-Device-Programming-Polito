@@ -7,11 +7,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="Lab 2 ex 3: add text file &quot;tests.txt&quot; used as input">
-      <change afterPath="$PROJECT_DIR$/tests.txt" afterDir="false" />
+    <list default="true" id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="Lab 2 ex 3: completed preparatory exercises with corresponding test functions">
+      <change afterPath="$PROJECT_DIR$/preparatoryExercises.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:test" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -45,24 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test main::tests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Run.executor": "Run",
+    "Cargo.Test main::tests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/edoar/OneDrive - Politecnico di Torino/Poli/4QuartoAnno/PDS/System-Device-Programming-Polito/lab2/ex3/preparatoryExercises.rs": "true",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Cargo.Test main::tests">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
@@ -119,7 +126,7 @@
       <updated>1742311347362</updated>
       <workItem from="1742311349727" duration="171000" />
       <workItem from="1742311885359" duration="5295000" />
-      <workItem from="1742385720686" duration="2984000" />
+      <workItem from="1742385720686" duration="3116000" />
     </task>
     <task id="LOCAL-00001" summary="Lab 2 ex 3: first commit">
       <option name="closed" value="true" />
@@ -145,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742312424834</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lab 2 ex 3: completed preparatory exercises with corresponding test functions">
+      <option name="closed" value="true" />
+      <created>1742388801811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742388801811</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +169,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lab 2 ex 3: first commit" />
     <MESSAGE value="Lab 2 ex 3: add text file &quot;tests.txt&quot; used as input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 ex 3: add text file &quot;tests.txt&quot; used as input" />
+    <MESSAGE value="Lab 2 ex 3: completed preparatory exercises with corresponding test functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 2 ex 3: completed preparatory exercises with corresponding test functions" />
   </component>
 </project>
