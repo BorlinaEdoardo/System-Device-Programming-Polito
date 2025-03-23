@@ -7,13 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="Lab 2 ex 3: file rearrangement">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ex3-77dbed6f7484c60c/output-bin-ex3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/ex3-77dbed6f7484c60c.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/ex3-77dbed6f7484c60c.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/ex3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/ex3.exe" afterDir="false" />
-    </list>
+    <list default="true" id="5e5f1566-cffc-46d1-a14a-5943607cb8ee" name="Changes" comment="Lab 2 ex 3: file rearrangement" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,6 +55,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/edoar/OneDrive - Politecnico di Torino/Poli/4QuartoAnno/PDS/System-Device-Programming-Polito/API-Programming/lab2/ex3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +64,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.disableDetachedFileInspectionC:/Users/edoar/OneDrive - Politecnico di Torino/Poli/4QuartoAnno/PDS/System-Device-Programming-Polito/lab2/ex3/preparatoryExercises.rs": "true",
     "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -129,6 +125,7 @@
       <workItem from="1742311349727" duration="171000" />
       <workItem from="1742311885359" duration="5295000" />
       <workItem from="1742385720686" duration="3435000" />
+      <workItem from="1742749610299" duration="2040000" />
     </task>
     <task id="LOCAL-00001" summary="Lab 2 ex 3: first commit">
       <option name="closed" value="true" />
