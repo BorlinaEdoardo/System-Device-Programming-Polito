@@ -5,6 +5,8 @@ pub struct Board {
     boats: [u8; 4],
     data: [[u8; BSIZE]; BSIZE],
 }
+
+#[derive(Debug)]
 pub enum Error {
     Overlap,
     OutOfBounds,
@@ -14,6 +16,15 @@ pub enum Boat {
     Vertical(usize),
     Horizontal(usize)
 }
+impl Boat{
+    pub fn get_size(&self) -> usize{
+        match self {
+            Boat::Vertical(size) => *size,
+            Boat::Horizontal(size) => *size
+        }
+    }
+}
+
 impl Board {
     /** Create a new board with the respective available ships */
     pub fn new(boats: &[u8]) -> Board {
@@ -51,29 +62,33 @@ impl Board {
 
         match boat {
             Boat::Vertical(size) => {
-                if self.boats[size-1] == 0{
+                if size + pos.0 > BSIZE {
+                    return Err(Error::OutOfBounds);
+                }else if self.boats[size-1] == 0{
                     return Err(Error::BoatCount);
                 }
                 for i in 0..size{
                     if self.data[pos.0+i][pos.1] == 1 {
                         return Err(Error::Overlap);
                     }
-                    self.data[pos.0][pos.1] = 1;
+                    self.data[pos.0+i][pos.1] = 1;
                 }
             },
             Boat::Horizontal(size) => {
-                if self.boats[size-1] == 0{
+                if size + pos.1 > BSIZE {
+                    return Err(Error::OutOfBounds);
+                }else if self.boats[size-1] == 0{
                     return Err(Error::BoatCount);
                 }
                 for i in 0..size{
                     if self.data[pos.0][pos.1+i] == 1 {
                         return Err(Error::Overlap);
                     }
-                    self.data[pos.0][pos.1] = 1;
+                    self.data[pos.0][pos.1+i] = 1;
                 }
             }
         }
-
+        self.boats[boat.get_size()-1] -= 1;
         Ok(self)
     }
 
@@ -97,6 +112,88 @@ impl Board {
             ret_val.push_str("\n");
         }
         return ret_val;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_new_board() {
+        let boats = [4, 3, 2, 1];
+        let board = Board::new(&boats);
+        assert_eq!(board.boats, boats);
+        for row in &board.data {
+            for &cell in row {
+                assert_eq!(cell, 0);
+            }
+        }
+    }
+
+    #[test]
+    fn test_add_boat_success() {
+        let boats = [1, 0, 0, 0];
+        let mut board = Board::new(&boats);
+        let result = board.add_boat(Boat::Horizontal(1), (0, 0));
+        assert!(result.is_ok());
+        assert_eq!(board.data[0][0], 1);
+    }
+
+    #[test]
+    fn test_add_boat_out_of_bounds() {
+        let boats = [1, 0, 0, 0];
+        let mut board = Board::new(&boats);
+        let result = board.add_boat(Boat::Horizontal(1), (BSIZE, BSIZE));
+        assert!(matches!(result, Err(Error::OutOfBounds)));
+    }
+
+    #[test]
+    fn test_add_boat_overlap() {
+        let boats = [2, 0, 0, 0];
+        let mut board = Board::new(&boats);
+        board.add_boat(Boat::Horizontal(1), (0, 0)).unwrap();
+        let result = board.add_boat(Boat::Horizontal(1), (0, 0));
+        assert!(matches!(result, Err(Error::Overlap)));
+    }
+
+    #[test]
+    fn test_add_boat_touching() {
+        let boats = [0, 2, 0, 0];
+        let mut board = Board::new(&boats);
+        board.add_boat(Boat::Horizontal(2), (0, 0)).unwrap();
+        let result = board.add_boat(Boat::Horizontal(2), (0, 1));
+        assert!(matches!(result, Err(Error::Overlap)));
+    }
+
+    #[test]
+    fn test_to_string() {
+        let boats = [1, 0, 0, 0];
+        let mut board = Board::new(&boats);
+        board.add_boat(Boat::Horizontal(1), (0, 0)).unwrap();
+        let board_str = board.to_string();
+        let expected_str = "0 0 0 0\n\
+        B - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n\
+        - - - - - - - - - - - - - - - - - - - - \n";
+        assert_eq!(board_str, expected_str);
     }
 }
 
