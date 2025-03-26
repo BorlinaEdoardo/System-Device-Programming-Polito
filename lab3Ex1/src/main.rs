@@ -1,4 +1,6 @@
-trait MySlug{
+
+// version 1
+/*trait MySlug{
     fn is_slug(&self)->bool;
     fn to_slug(&self)->String;
 }
@@ -19,7 +21,7 @@ impl MySlug for &str{
     fn is_slug(&self)->bool{
         self.eq(&(self.to_slug().as_str()))
     }
-}
+}*/
 
 fn conv(c: char) -> char {
     const SUBS_I: &str = "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż";
@@ -39,6 +41,25 @@ fn conv(c: char) -> char {
         return '-';
     }
 }
+
+
+// version 2
+trait Slug{
+    fn is_slug(&self)->bool;
+    fn to_slug(&self)->String;
+}
+
+impl<T> Slug for T
+    where T : AsRef<str> {
+        fn to_slug(&self) -> String {
+            slugify(self.as_ref())
+        }
+        fn is_slug(&self)->bool{
+            self.as_ref() == slugify(self.as_ref())
+        }
+    }
+
+
 
 // return the "slug" version of the imput string
 fn slugify(s: &str) -> String {
