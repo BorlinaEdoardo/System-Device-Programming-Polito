@@ -48,7 +48,7 @@ pub fn test_add_with_real() {
 
     assert_eq!(b.to_tuple(), (11.0, 2.0))
 }
-/*
+
 #[test]
 pub fn test_inc_add() {
     let mut a = ComplexNumber::new(1.0, 2.0);
@@ -68,6 +68,7 @@ pub fn test_add_with_reference() {
     assert_eq!(c.to_tuple(), (2.0, 4.0))
 }
 
+
 #[test]
 pub fn test_add_reference_with_reference() {
     let a = ComplexNumber::new(1.0, 2.0);
@@ -81,13 +82,14 @@ pub fn test_add_reference_with_reference() {
 #[test]
 pub fn test_enable_copy() {
     // why this code won't compile? Read carefully the error message
-    // what do we nee to do to make it work?
+    // what do we need to do to make it work?
     let a = ComplexNumber::new(1.0, 2.0);
 
     let b = a + a;
 
     assert_eq!(b.to_tuple(), (2.0, 4.0));
 }
+
 
 #[test]
 pub fn test_default_values() {
@@ -100,28 +102,7 @@ pub fn test_default_values() {
     }
 }
 
-// commented out again when implementing TryInto see note below
-//#[test]
-//pub fn test_convert_into_real() {
-//    let a = ComplexNumber::from_real(1.0);
-//    let b: f64 = a.into();
-//
-//    assert_eq!(b, 1.0);
-//
-//}
 
-// commented out again when implementing TryInto because it's covered by TryInto see note below
-//#[test]
-//pub fn test_panic_when_impossible_to_convert_to_real() {
-//    // we can convert into a real only if imag is 0
-//    let a = ComplexNumber::new(1.0, 2.0);
-//
-//    let result = std::panic::catch_unwind(|| {
-//        let _: f64 = a.into();
-//    });
-//
-//    assert!(result.is_err());
-//}
 
 #[test]
 pub fn test_try_into_f64() {
@@ -135,7 +116,7 @@ pub fn test_try_into_f64() {
     // How do we solve this? We delete the Into implementation and the above tests using Into
     // The purpose is that if the conversion may fail, then you are encouraged to write only TryInto, 
     // and we are not allowed to use Into.
-    // Instead if we have Into the implementation of TryInto is trivial
+    // Instead, if we have Into the implementation of TryInto is trivial
 
     let a = ComplexNumber::new(1.0, 2.0);
     if let Err(e) = TryInto::<f64>::try_into(a) {
@@ -160,6 +141,7 @@ pub fn test_try_from_f64() {
     let a: ComplexNumber = 1.0.into();
     assert_eq!(a.to_tuple(), (1.0, 0.0));
 }
+
 
 #[test]
 pub fn test_comparison() {
@@ -212,7 +194,7 @@ pub fn test_as_ref() {
     // allow a ref to real part as &f64
 
     let a = ComplexNumber::new(1.0, 2.0);
-    let r = a.as_ref();
+    let r:&f64 = a.as_ref();
 
     assert_eq!(*r, 1.0);
 }
@@ -230,6 +212,7 @@ pub fn test_as_mut() {
     assert_eq!(a.real(), 10.0);
 }
 
+/*
 #[test]
 pub fn test_hash_with_hash_map() {
     // in order to use complex numbers in a hash map we need to implement the Hash Trait

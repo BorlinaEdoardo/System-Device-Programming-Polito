@@ -8,26 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301e7537-49db-4367-80df-31472f517f38" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/solution.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/.idea/lab3Ex2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/src/solution.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/.rustc_info.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/CACHEDIR.TAG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.cargo-lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-d82ff493c2c8dab5/invoked.timestamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-d82ff493c2c8dab5/test-bin-lab3Ex2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-d82ff493c2c8dab5/test-bin-lab3Ex2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-fd5b4a76504a3841/bin-lab3Ex2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-fd5b4a76504a3841/bin-lab3Ex2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/target/debug/.fingerprint/lab3Ex2-fd5b4a76504a3841/invoked.timestamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3Ex2_complex_numbers/tests/complex_numbers.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/complex_numbers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/complex_numbers.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BorlinaEdoardo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BorlinaEdoardo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/BorlinaEdoardo/System-Device-Programming-Polito.git",
-    "accountId": "1f1bc82b-a8c5-4789-91bf-0c7154a305b8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BorlinaEdoardo/System-Device-Programming-Polito.git&quot;,
+    &quot;accountId&quot;: &quot;1f1bc82b-a8c5-4789-91bf-0c7154a305b8&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="qQ6w2OhH" />
   </component>
@@ -71,9 +54,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_add_reference_with_reference.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test test_create (1).executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test test_create.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test test_create_from_real.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_default_values.executor&quot;: &quot;Run&quot;,
     &quot;Cargo.Test test_display.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -95,9 +80,26 @@
       <recent name="C:\Users\edoar\OneDrive - Politecnico di Torino\Poli\4QuartoAnno\PDS\System-Device-Programming-Polito\API-Programming\lab3\ex2_cnumbers\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Test test_display">
+  <component name="RunManager" selected="Cargo.Test test_default_values">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package ex2_cnumbers --bin ex2_cnumbers" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test_add_reference_with_reference" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package complex_numbers --test complex_numbers test_add_reference_with_reference -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -130,9 +132,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_create" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="buildProfileId" value="test" />
-      <option name="command" value="test --package ex2_cnumbers --test complex_numbers test_create -- --exact" />
+    <configuration name="Test test_create_from_real" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package complex_numbers --test complex_numbers test_create_from_real -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -148,8 +149,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_create_from_real" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package complex_numbers --test complex_numbers test_create_from_real -- --exact" />
+    <configuration name="Test test_default_values" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package complex_numbers --test complex_numbers test_default_values -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -184,10 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test test_default_values" />
+        <item itemvalue="Cargo.Test test_add_reference_with_reference" />
         <item itemvalue="Cargo.Test test_display" />
         <item itemvalue="Cargo.Test test_create_from_real" />
         <item itemvalue="Cargo.Test test_create (1)" />
-        <item itemvalue="Cargo.Test test_create" />
       </list>
     </recent_temporary>
   </component>
@@ -204,6 +206,7 @@
       <updated>1743007876740</updated>
       <workItem from="1743007878807" duration="4241000" />
       <workItem from="1743075623955" duration="474000" />
+      <workItem from="1743363775731" duration="5758000" />
     </task>
     <servers />
   </component>
