@@ -8,10 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301e7537-49db-4367-80df-31472f517f38" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ex3_circ_buffer/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex3_circ_buffer/src/buffer.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex3_circ_buffer/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex3_circ_buffer/tests/tests.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/src/buffer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/src/buffer.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/src/main.rs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,6 +217,7 @@
       <workItem from="1743420961990" duration="123000" />
       <workItem from="1743440042703" duration="1488000" />
       <workItem from="1743442607875" duration="1032000" />
+      <workItem from="1743453812469" duration="1968000" />
     </task>
     <servers />
   </component>

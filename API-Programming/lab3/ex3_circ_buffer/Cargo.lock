@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "ex3_circ_buffer"
+name = "circular_buffer"
 version = "0.1.0"
