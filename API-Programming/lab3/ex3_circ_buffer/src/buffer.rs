@@ -1,7 +1,7 @@
-pub struct CircularBuffer<T>{
+pub struct CircularBuffer<T> {
     head: usize,
     tail: usize,
-    buffer: Vec<T>,
+    buffer: Vec<Option<T>>,
     num: usize
 }
 
@@ -9,23 +9,23 @@ pub struct CircularBuffer<T>{
 pub enum BufferError {
     GenericError(String)
 }
-impl<T: Default + Clone> CircularBuffer<T>{
+impl<T: Clone> CircularBuffer<T>{
     pub fn new(capacity: usize) -> Self {
         CircularBuffer{
             head: 0,
             tail: 0,
-            buffer: vec![T::default(); capacity],
+            buffer: vec![None; capacity],
             num: 0
         }
     }
-    pub fn write(&mut self, item: T) -> Result<(), BufferError>  {
+    pub fn write(&mut self, item: T) -> Result<(), BufferError> {
         // if buffer is full error is returned
         if self.size() == 0 {
             Err(BufferError::GenericError("Buffer size is zero".to_string()))
         } else if self.num != 0 && self.size() == self.num {
             Err(BufferError::GenericError("Circular Buffer Overflow".to_string()))
         } else {
-            self.buffer[self.tail] = item;
+            self.buffer[self.tail] = Some(item);
             self.tail = (self.tail + 1) % self.size();
             self.num += 1;
             Ok(())
@@ -35,7 +35,7 @@ impl<T: Default + Clone> CircularBuffer<T>{
         let res;
         let buf = &self.buffer[..];
         if self.num != 0 {
-            res = Some(buf[self.head].clone());
+            res = buf[self.head].clone();
             self.head = (self.head + 1) % self.size();
             self.num -= 1;
         } else {
