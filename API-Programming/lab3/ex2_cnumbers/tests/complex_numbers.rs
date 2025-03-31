@@ -212,7 +212,7 @@ pub fn test_as_mut() {
     assert_eq!(a.real(), 10.0);
 }
 
-/*
+
 #[test]
 pub fn test_hash_with_hash_map() {
     // in order to use complex numbers in a hash map we need to implement the Hash Trait
@@ -234,7 +234,7 @@ pub fn test_hash_with_hash_map() {
         Some(_) => assert!(false),
     };
 
-    // trty ro replace value with c
+    // try ro replace value with c
     match map.insert(a, c) {
         None => assert!(false),
         Some(x) => assert_eq!(x.to_tuple(), (2.0, 4.0)), // should return the old value, b
@@ -280,4 +280,3 @@ pub fn test_deque() {
         assert!(false);
     }
 }
-*/

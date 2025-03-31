@@ -1,7 +1,8 @@
 use std::cmp::Ordering;
 use std::fmt::{Display, Formatter};
-use std::ops::{Add, Deref};
+use std::ops::Add;
 use std::ops::AddAssign;
+use std::hash::{Hash, Hasher};
 
 #[derive(Clone, Copy, Debug)]
 pub struct ComplexNumber {
@@ -136,5 +137,11 @@ impl AsRef<f64> for ComplexNumber{
 impl AsMut<f64> for ComplexNumber{
     fn as_mut(&mut self) -> &mut f64 {
         &mut self.real
+    }
+}
+
+impl Hash for ComplexNumber {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.to_string().hash(state);
     }
 }

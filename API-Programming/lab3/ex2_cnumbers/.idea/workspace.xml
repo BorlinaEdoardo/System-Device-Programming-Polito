@@ -51,36 +51,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_add_reference_with_reference.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_create (1).executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_create.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_create_from_real.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_default_values.executor&quot;: &quot;Run&quot;,
-    &quot;Cargo.Test test_display.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Run.executor": "Run",
+    "Cargo.Test test_add_reference_with_reference.executor": "Run",
+    "Cargo.Test test_as_mut.executor": "Run",
+    "Cargo.Test test_create (1).executor": "Run",
+    "Cargo.Test test_create.executor": "Run",
+    "Cargo.Test test_create_from_real.executor": "Run",
+    "Cargo.Test test_default_values.executor": "Run",
+    "Cargo.Test test_display.executor": "Run",
+    "Cargo.Test test_hash_with_hash_map.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\edoar\OneDrive - Politecnico di Torino\Poli\4QuartoAnno\PDS\System-Device-Programming-Polito\API-Programming\lab3\ex2_cnumbers\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Test test_default_values">
+  <component name="RunManager" selected="Cargo.Test test_hash_with_hash_map">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package ex2_cnumbers --bin ex2_cnumbers" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -115,25 +117,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_create (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package complex_numbers --test complex_numbers test_create -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test test_create_from_real" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package complex_numbers --test complex_numbers test_create_from_real -- --exact" />
+    <configuration name="Test test_as_mut" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package complex_numbers --test complex_numbers test_as_mut -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -183,13 +168,30 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test test_hash_with_hash_map" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package complex_numbers --test complex_numbers test_hash_with_hash_map -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test test_hash_with_hash_map" />
+        <item itemvalue="Cargo.Test test_as_mut" />
         <item itemvalue="Cargo.Test test_default_values" />
         <item itemvalue="Cargo.Test test_add_reference_with_reference" />
         <item itemvalue="Cargo.Test test_display" />
-        <item itemvalue="Cargo.Test test_create_from_real" />
-        <item itemvalue="Cargo.Test test_create (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -207,6 +209,8 @@
       <workItem from="1743007878807" duration="4241000" />
       <workItem from="1743075623955" duration="474000" />
       <workItem from="1743363775731" duration="5758000" />
+      <workItem from="1743420961990" duration="123000" />
+      <workItem from="1743440042703" duration="1328000" />
     </task>
     <servers />
   </component>
