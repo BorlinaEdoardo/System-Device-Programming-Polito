@@ -1,5 +1,6 @@
 use std::fmt;
 use std::fmt::{Display, Formatter};
+use std::ops::{Index, IndexMut};
 
 pub struct CircularBuffer<T> {
     head: usize,
@@ -97,5 +98,27 @@ impl<T: Display> Display for CircularBuffer<T>{
         });
 
         ret_val
+    }
+}
+
+impl<T: Clone> Index<usize> for CircularBuffer<T> {
+    type Output = Option<T>;
+    fn index(&self, index: usize) -> &Self::Output {
+        let i:usize = (index+self.head)%self.buffer.len();
+        if i > self.num {
+            panic!();
+        }
+        &(self.buffer[i])
+    }
+}
+
+impl<T: Clone> IndexMut<usize> for CircularBuffer<T> {
+    fn index_mut(&mut self, index:usize) -> &mut Self::Output {
+        let i:usize = (index+self.head)%self.buffer.len();
+
+        if i > self.num {
+            panic!();
+        }
+        &mut self.buffer[i]
     }
 }

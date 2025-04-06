@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301e7537-49db-4367-80df-31472f517f38" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../1-os161-overview.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/src/buffer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/src/buffer.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ex3_circ_buffer/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ex3_circ_buffer/target/.rustc_info.json" afterDir="false" />

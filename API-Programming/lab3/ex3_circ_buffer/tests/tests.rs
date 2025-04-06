@@ -60,3 +60,42 @@ pub fn circular_buffer_make_contiguous(){
 
     assert_eq!(cb.to_string(), "1, 1, 1, 1, , ");
 }
+
+#[test]
+pub fn circular_buffer_test_index(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(5);
+    for i in 0..5 {
+        cb.write(i).unwrap();
+    }
+    assert_eq!(cb[0].unwrap(), 0);
+    assert_eq!(cb[4].unwrap(), 4);
+}
+
+#[test]
+pub fn circular_buffer_test_index_non_contiguous(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(5);
+    for _i in 0..5 {
+        cb.write(1).unwrap();
+    }
+    cb.read().unwrap();
+    cb.read().unwrap();
+    cb.read().unwrap();
+    cb.write(2).unwrap();
+    cb.write(3).unwrap();
+
+    assert_eq!(cb[0].unwrap(), 1);
+    assert_eq!(cb[3].unwrap(), 3);
+}
+
+#[test]
+pub fn circular_buffer_test_mut_index(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(5);
+    for i in 0..5 {
+        cb.write(i).unwrap();
+    }
+    assert_eq!(cb[2].unwrap(), 2);
+
+    cb[2] = Some(5);
+
+    assert_eq!(cb[2].unwrap(), 5);
+}
