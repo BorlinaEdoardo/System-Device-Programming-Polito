@@ -15,20 +15,48 @@ pub fn circular_buffer_write_read() {
     assert_eq!(cb.read().unwrap(), 1);
 }
 
-/*
 #[test]
-pub fn circular_buffer_box() {
-    let mut cb: CircularBuffer<Box<Option<dyn Any>>> = CircularBuffer::new(10);
+pub fn circular_buffer_write_multiple() {
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(10);
+    for i in 0..10 {
+        cb.write(i).unwrap();
+    }
+    assert_eq!(cb.num(), 10);
 
-    cb.write(Box::new(Some(10))).unwrap();
-    cb.write(Box::new(Some("ciao".to_string()))).unwrap();
-
-    assert_eq!(cb.num(), 2);
-
-    let v1 = cb.read().unwrap();
-    let v2 = cb.read().unwrap();
-
-    assert_eq!(*v1.downcast::<i32>().unwrap(), 10);
-    assert_eq!(*v2.downcast::<String>().unwrap(), "ciao".to_string());
+    for i in 0..10 {
+        assert_eq!(cb.read().unwrap(), i);
+    }
 }
- */
+
+#[test]
+pub fn circular_buffer_read_when_empty(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(10);
+    assert_eq!(cb.read(), None);
+}
+
+#[test]
+pub fn circular_buffer_write_when_full(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(10);
+    for i in 0..10 {
+        cb.write(i).unwrap();
+    }
+    assert_eq!(cb.write(10).err().unwrap(), BufferError::BufferOverflow);
+}
+
+#[test]
+pub fn circular_buffer_make_contiguous(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(5);
+    for _i in 0..5 {
+        cb.write(1).unwrap();
+    }
+    cb.read().unwrap();
+    cb.read().unwrap();
+    cb.read().unwrap();
+    cb.write(1).unwrap();
+    cb.write(1).unwrap();
+    assert_eq!(cb.to_string(), "1, 1, , 1, 1, ");
+
+    cb.make_contiguous();
+
+    assert_eq!(cb.to_string(), "1, 1, 1, 1, , ");
+}
