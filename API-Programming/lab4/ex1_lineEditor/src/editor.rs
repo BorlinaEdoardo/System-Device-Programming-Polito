@@ -1,9 +1,11 @@
 // WARNING: 
 // - the lifetimes are not set correctly, you have to set them to make it compile
 // - you have also to implemment missing functions and fix the code
-// - *** see test test functions in the code for usage examples 
+// - *** see test test functions in the code for usage examples
 
+use std::fs::File;
 use std::io;
+use std::io::{BufRead, Read};
 
 // (1) LineEditor: implement functionality
 pub struct LineEditor {
@@ -12,12 +14,17 @@ pub struct LineEditor {
 
 impl LineEditor {
     pub fn new(s: String) -> Self {
-        unimplemented!()
+        LineEditor {
+            lines: s.lines().map(|x| x.to_string()).collect(),
+        }
     }
 
     // create a new LineEditor from a file
     pub fn from_file(file_name: &str) -> Result<Self, io::Error> {
-        unimplemented!();
+        let mut file = File::open(file_name)?;
+        let mut contents = String::new();
+        file.read_to_string(&mut contents)?;
+        Ok(LineEditor::new(contents))
     }
 
     pub fn all_lines(&self) -> Vec<&str> {
@@ -33,7 +40,7 @@ impl LineEditor {
 
 // (2) Match contains the information about the match. Fix the lifetimes
 // repl will contain the replacement.
-// It is an Option because it may be not set yet or it may be skipped 
+// It is an Option because it may be not set yet, or it may be skipped
 struct Match<'a> {
     pub line: usize,
     pub start: usize,
@@ -42,11 +49,11 @@ struct Match<'a> {
     pub repl: Option<String>,
 }
 
-/*
+
 
 // use the crate "regex" to find the pattern and its method find_iter for iterating over the matches
 // modify if necessary, this is just an example for using a regex to find a pattern
-fn find_example(lines: &Vec<&str>, pattern: &str) -> Vec<Match> {
+fn find_example<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
     let re = regex::Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
@@ -62,6 +69,10 @@ fn find_example(lines: &Vec<&str>, pattern: &str) -> Vec<Match> {
     }
     matches
 }
+
+
+
+ /*
 
 // (3) Fix the lifetimes of the FindReplace struct
 // (4) implement the Finder struct

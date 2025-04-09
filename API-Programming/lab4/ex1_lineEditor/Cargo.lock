@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ex1_lineEditor"
+name = "line_editor"
 version = "0.1.0"
 dependencies = [
  "regex",
