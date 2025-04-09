@@ -53,7 +53,7 @@ struct Match<'a> {
 
 // use the crate "regex" to find the pattern and its method find_iter for iterating over the matches
 // modify if necessary, this is just an example for using a regex to find a pattern
-fn find_example<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
+fn find<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
     let re = regex::Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
@@ -72,30 +72,37 @@ fn find_example<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>>
 
 
 
- /*
+
 
 // (3) Fix the lifetimes of the FindReplace struct
 // (4) implement the Finder struct
-struct FindReplace {
-    lines: Vec<&str>,
+struct FindReplace<'a> {
+    lines: Vec<&'a str>,
     pattern: String,
-    matches: Vec<Match>,
+    matches: Vec<Match<'a>>,
 }
 
 impl FindReplace {
     pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
-        unimplemented!()
+        let mut matches = find(&lines, pattern);
+        FindReplace{
+            lines,
+            pattern: pattern.to_string(),
+            matches: matches
+        }
     }
 
     // return all the matches
     pub fn matches(&self) -> &Vec<Match> {
-        unimplemented!()
+        &self.matches
     }
+
+
 
     // apply a function to all matches and allow to accept them and set the repl
     // useful for promptig the user for a replacement
     pub fn apply(&mut self, fun: impl Fn(&mut Match) -> bool) {
-        unimplemented!()
+        self.matches.iter_mut().for_each(fun)
     }
 }
 
@@ -136,7 +143,7 @@ fn test_find_replace() {
 
 }
 
-
+/*
 // (6) sometimes it's very expensive to find all the matches at once before applying 
 // the changes
 // we can implement a lazy finder that finds just the next match and returns it
