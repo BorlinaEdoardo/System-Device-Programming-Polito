@@ -99,3 +99,16 @@ pub fn circular_buffer_test_mut_index(){
 
     assert_eq!(cb[2].unwrap(), 5);
 }
+
+#[test]
+pub fn circular_buffer_test_iterator(){
+    let mut cb:CircularBuffer<i32> = CircularBuffer::new(5);
+    for i in 0..3 {
+        cb.write(i).unwrap();
+    }
+    let v = cb.into_iter().
+        map(|x| x.unwrap()+1).
+        collect::<Vec<i32>>();
+
+    assert_eq!(v, [1, 2, 3]);
+}

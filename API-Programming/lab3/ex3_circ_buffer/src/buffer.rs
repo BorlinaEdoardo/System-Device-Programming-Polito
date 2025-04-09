@@ -9,6 +9,15 @@ pub struct CircularBuffer<T> {
     num: usize
 }
 
+impl<T: Clone> IntoIterator for CircularBuffer<T> {
+    type Item = Option<T>;
+    type IntoIter = std::vec::IntoIter<Self::Item>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.buffer[self.head..self.tail].to_vec().into_iter()
+    }
+}
+
 #[derive(Debug, Eq, PartialEq)]
 pub enum BufferError {
     GenericError(String),
