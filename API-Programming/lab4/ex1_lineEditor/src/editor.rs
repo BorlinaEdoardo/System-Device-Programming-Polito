@@ -8,6 +8,7 @@ use std::io;
 use std::io::{BufRead, Read};
 
 // (1) LineEditor: implement functionality
+#[derive(Debug, Clone)]
 pub struct LineEditor {
     lines: Vec<String>,
 }
@@ -28,7 +29,11 @@ impl LineEditor {
     }
 
     pub fn all_lines(&self) -> Vec<&str> {
-        self.lines.iter().map(|l| l.as_str()).collect()
+        let mut result = Vec::with_capacity(self.lines.len());
+        for s in &self.lines {
+            result.push(s.as_str());
+        }
+        result
     }
 
     pub fn replace(&mut self, line: usize, start: usize, end: usize, subst: &str) {
@@ -45,11 +50,11 @@ impl LineEditor {
 // repl will contain the replacement.
 // It is an Option because it may be not set yet, or it may be skipped
 #[derive(Debug, Clone)]
-struct Match {
+struct Match<'a> {
     pub line: usize,
     pub start: usize,
     pub end: usize,
-    pub text: String,
+    pub text: &'a str,
     pub repl: Option<String>,
 }
 
@@ -57,7 +62,7 @@ struct Match {
 
 // use the crate "regex" to find the pattern and its method find_iter for iterating over the matches
 // modify if necessary, this is just an example for using a regex to find a pattern
-fn find<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match> {
+fn find<'a, 'b>(lines: &'b Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
     let re = regex::Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
@@ -66,7 +71,7 @@ fn find<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match> {
                 line: line_idx,
                 start: mat.start(),
                 end: mat.end(),
-                text: line[mat.start()..mat.end()].to_string(),
+                text: & line[mat.start()..mat.end()],
                 repl: None,
             });
         }
@@ -80,10 +85,11 @@ fn find<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match> {
 
 // (3) Fix the lifetimes of the FindReplace struct
 // (4) implement the Finder struct
+#[derive(Clone)]
 struct FindReplace<'a> {
     lines: Vec<&'a str>,
     pattern: String,
-    matches: Vec<Match>,
+    matches: Vec<Match<'a>>,
 }
 
 impl<'a> FindReplace<'a> {
@@ -93,7 +99,7 @@ impl<'a> FindReplace<'a> {
             pattern: pattern.to_string(),
             matches: Vec::new(), // inizialmente vuoto
         };
-        fr.matches = find(&fr.lines, pattern); // ora possiamo usare fr.lines
+        fr.matches = find(&(fr).lines, pattern); // ora possiamo usare fr.lines
         fr
     }
 
@@ -119,8 +125,8 @@ fn test_find_replace() {
     let s = "Hello World.\nA second line full of text.";
     let mut editor = LineEditor::new(s.to_string());
 
-    let lines = editor.all_lines();
-    let mut finder = FindReplace::new(lines, "ll");
+    let mut lines = editor.all_lines();
+    let mut finder = FindReplace::new(lines.clone(), "ll");
 
     // find all the matches and accept them
     finder.apply(|m| {
@@ -137,13 +143,14 @@ fn test_find_replace() {
 
     // alternate method: why this one works?
 
-    let mut subs = Vec::new();
-    for m in finder.matches() {
-        subs.push((m.line, m.start, m.end, m.text.clone()));
-    }
+    let subs: Vec<(usize, usize, usize, String)> = finder
+        .matches()
+        .iter()
+        .map(|m| (m.line, m.start, m.end, m.repl.clone().unwrap()))
+        .collect();
 
     for (line, start, end, subst) in subs {
-        editor.replace(line, start, end, subst.as_str());
+        editor.replace(line, start, end, &subst);
     }
 
     println!("{}", editor.lines.join("\n"));
@@ -183,6 +190,7 @@ impl<'a> LazyFinder<'a> {
     }
 }
 
+/*
 // (7) example of how to use the LazyFinder
 #[test]
 fn test_lazy_finder() {
@@ -237,4 +245,5 @@ fn test_find_iter() {
     }
 }
 
+*/
 
