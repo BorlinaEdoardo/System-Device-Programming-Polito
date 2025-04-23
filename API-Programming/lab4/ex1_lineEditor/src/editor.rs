@@ -6,7 +6,8 @@
 use std::fs::File;
 use std::io;
 use std::io::{BufRead, Read};
-use regex::bytes::Regex;
+
+use regex::{ Regex};
 
 // (1) LineEditor: implement functionality
 #[derive(Debug, Clone)]
@@ -65,7 +66,7 @@ struct Match<'a> {
 // modify if necessary, this is just an example for using a regex to find a pattern
 fn find<'a, 'b>(lines: &'b Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
-    let re = regex::Regex::new(pattern).unwrap();
+    let re = Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
         for mat in re.find_iter(line) {
             matches.push(Match {
@@ -236,24 +237,52 @@ fn test_lazy_finder() {
 
 
 // (8) now you have everything you need to implement the real Iterator
-/*
-struct FindIter {
-    lines: Vec<&str>,
-    pattern: String,
-    // ... other?
+#[derive(Clone)]
+struct FindIter<'a> {
+    lines: Vec<&'a str>,
+    re:   Regex,
+    line: usize,
+    offs: usize,
 }
 
-impl FindIter {
-    pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
-        unimplemented!()
+impl<'a> FindIter<'a> {
+    pub fn new(lines: Vec<&'a str>, pattern: &str) -> Self {
+        FindIter {
+            lines,
+            re:   Regex::new(pattern).unwrap(),
+            line: 0,
+            offs: 0,
+        }
     }
 }
 
-impl Iterator for FindIter {
-    type Item = Match; // <== we inform the Iterator that we return a Match
+impl<'a> Iterator for FindIter<'a> {
+    type Item = Match<'a>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        unimplemented!()
+        while self.line < self.lines.len() {
+            let hay = self.lines[self.line];
+            // try to find a match at or after offs
+            if let Some(mat) = self.re.find_at(hay, self.offs) {
+                let start = mat.start();
+                let end   = mat.end();
+                // prepare the Match<'a>
+                let m = Match {
+                    line: self.line,
+                    start,
+                    end,
+                    text:  &hay[start..end],
+                    repl:  None,
+                };
+                // bump offs so the next call continues after this match
+                self.offs = end;
+                return Some(m);
+            }
+            // no more on this line → advance to next
+            self.line += 1;
+            self.offs  = 0;
+        }
+        None
     }
 }
 
@@ -273,5 +302,4 @@ fn test_find_iter() {
     }
 }
 
-*/
 
