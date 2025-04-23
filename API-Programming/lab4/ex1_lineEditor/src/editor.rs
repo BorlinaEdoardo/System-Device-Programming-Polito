@@ -6,6 +6,7 @@
 use std::fs::File;
 use std::io;
 use std::io::{BufRead, Read};
+use regex::bytes::Regex;
 
 // (1) LineEditor: implement functionality
 #[derive(Debug, Clone)]
@@ -178,7 +179,11 @@ struct LazyFinder<'a> {
 
 impl<'a> LazyFinder<'a> {
     pub fn new(lines: Vec<& 'a str>, pattern: & 'a str) -> Self {
-        unimplemented!()
+        LazyFinder{
+            lines,
+            pattern: pattern.to_string(),
+            pos: None,
+        }
     }
 
     pub fn next(&mut self) -> Option<Match> {
@@ -186,11 +191,34 @@ impl<'a> LazyFinder<'a> {
         // return None if there are no more matches
         // return Some(Match) if there is a match
         // each time save the position of the match for the next call
-        unimplemented!()
+        let re = Regex::new(self.pattern.as_str()).unwrap();
+        let start:usize = if self.pos.is_none() { 0 }  else { self.pos.unwrap().line };
+        for (line_id, line) in self.lines[start..].iter().enumerate() {
+            let m = re.find(line.as_ref());
+            if m.is_some() {
+                if self.pos.is_none() || m?.start() != self.pos.unwrap().offset {
+                    self.pos = Some(
+                        FinderPos {
+                            line: line_id,
+                            offset: m?.start(),
+                        }
+                    );
+                    return Some(Match {
+                        line: line_id,
+                        start: m?.start(),
+                        end: m?.end(),
+                        text: &line[m?.start()..m?.end()],
+                        repl: None,
+                    });
+                }
+            }
+        }
+        // if no match is found return none
+        None
     }
 }
 
-/*
+
 // (7) example of how to use the LazyFinder
 #[test]
 fn test_lazy_finder() {
@@ -208,7 +236,7 @@ fn test_lazy_finder() {
 
 
 // (8) now you have everything you need to implement the real Iterator
-
+/*
 struct FindIter {
     lines: Vec<&str>,
     pattern: String,
