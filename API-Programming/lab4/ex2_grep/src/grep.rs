@@ -4,6 +4,7 @@
 
 pub mod simple_even_iter {
     use std::ops::Rem;
+    use std::vec::IntoIter;
 
     // (1) let start with a simple iterator adapter for just one type, "i32"
     // see the adapter pattern example in the pdf "Adapter Pattern..."
@@ -43,6 +44,7 @@ pub mod simple_even_iter {
         let v = vec![1, 2, 3, 4, 5];
         // why iter() does not work here?
         let it = EvenIter::new(v.into_iter());
+
         for i in it {
             println!("i: {}", i);
         }
@@ -74,15 +76,14 @@ pub mod simple_even_iter {
     }
 
 }
-/*
+
 pub mod even_iter {
     // (4) more adavanced: implement for all integer types
     // => install the external crate "num" to have some Traits identifying all number types
     use num;
 
-    // the generic parameters I and U are already defined for you in the struct deinition
-    // (5) write in a comment in plain english the meaning of the generic parameters
-    // and their constraints
+    // the generic parameters I and U are already defined for you in the struct definition
+
     struct EvenIter<I, U>
     where
         I: Iterator<Item = U> {
@@ -96,7 +97,16 @@ pub mod even_iter {
         type Item = U;
 
         fn next(&mut self) -> Option<Self::Item> {
-            unimplemented!()
+            let retval = self.iter.next();
+            if let Some(val) = retval {
+                if val.is_even() {
+                    Some(val)
+                } else {
+                    self.iter.next()
+                }
+            } else {
+                None
+            }
         }
 
     }
@@ -118,6 +128,8 @@ pub mod even_iter {
 // install also the "regex" crate for regular expressions
 
 use walkdir;
+use regex;
+use walkdir::DirEntry;
 
 // (2) define the match result
 struct Match {
@@ -132,6 +144,10 @@ fn test_walk_dir() {
     let wdir = walkdir::WalkDir::new("/tmp");
     for entry in wdir.into_iter() {
         // print the name of the file or an error message
+        match entry {
+            Ok(e) => println!("File: {}", e.path().display()),
+            Err(err) => eprintln!("Error: {}", err),
+        }
     }
 }
 
@@ -139,11 +155,12 @@ fn test_walk_dir() {
 // add anything you need implement it
 struct GrepIter {
     inner: walkdir::IntoIter,
+    grep: regex::bytes::Regex
 }
 
 impl GrepIter {
-    fn new(iter: walkdir::IntoIter) -> Self {
-        GrepIter { inner: iter }
+    fn new(iter: walkdir::IntoIter, grep: String) -> Self {
+        GrepIter { inner: iter, grep: regex::bytes::Regex::new(grep.as_str()).unwrap() }
     }
 }
 
@@ -152,7 +169,18 @@ impl Iterator for GrepIter {
     type Item = Result<Match, walkdir::Error>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        unimplemented!()
+        match self.inner.next(){
+            Some(Ok(val)) => {
+                let dir:DirEntry = val;
+                Some(Ok(Match{
+                    file: dir.path().file_name().unwrap().to_str().unwrap().to_string(),
+                    line: self.grep.captures_len(),
+                    text: "Match".to_string(),
+                }))
+            }
+            Some(Err(err)) => Some(Err(err)),
+            _ => None
+        }
     }
 }
 
@@ -168,6 +196,7 @@ fn test_grep_iter() {
     }
 }
 
+/*
 // (5) add grep() to IntoIter  (see the first example in EvenIter for i32)
 
 trait Grep {
@@ -188,5 +217,4 @@ fn test_grep() {
 }
 
 
-
- */
+*/
