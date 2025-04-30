@@ -48,6 +48,7 @@ pub mod mem_inspect {
 
 
 pub mod List1 {
+    use std::mem;
 
     pub enum Node<T> {
         Cons(T, Box<Node<T>>),
@@ -60,7 +61,9 @@ pub mod List1 {
 
     impl<T> List<T> {
         pub fn new() -> Self {
-            unimplemented!()
+            List{
+                head: Node::Nil,
+            }
         }
 
         // insert a new element at the beginning of the list
@@ -71,18 +74,33 @@ pub mod List1 {
         // 3. you can't copy it either, because Box can't be copied
         // solution: use mem::replace to move the value of self.head into a new variable and replace it with Nil
         // 4. let self.head point to the new created node
-        pub fn push(&mut self, elem: i32) {
-            unimplemented!()
+        pub fn push(&mut self, elem: T) {
+            let old_head = Box::new(mem::replace(&mut self.head, Node::Nil));
+
+            self.head = Node::Cons(elem, old_head);
         }
 
         // pop the first element of the list and return it
         fn pop(&mut self) -> Option<T> {
-            unimplemented!()
+            let old_head = mem::replace(&mut self.head, Node::Nil);
+
+            match old_head {
+                Node::Nil => None,
+                Node::Cons(ret_val, next) => {
+                    self.head = *next;
+                    Some(ret_val)
+                }
+            }
         }
 
         // return a referece to the first element of the list
         pub fn peek(&self) -> Option<&T> {
-            unimplemented!()
+            match self.head.clone() {
+                Node::Nil => None,
+                Node::Cons(element, _) => {
+                    Some(&element)
+                }
+            }
         }
 
         // uncomment after having implemented the ListIter struct
@@ -93,7 +111,18 @@ pub mod List1 {
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
-            unimplemented!()
+            let mut vec: Vec<T> = Vec::with_capacity(n);
+            let mut new_list: List<T> = List::new();
+            for i in 0..n {
+                if let Some(el) = self.pop(){
+                    vec.push(el);
+                } else {
+                    break;
+                }
+            }
+
+            vec.reverse().into_iter().for_each(|x| new_list.push(x));
+            new_list
         }
     }
 
