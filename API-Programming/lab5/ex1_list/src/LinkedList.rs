@@ -49,18 +49,21 @@ pub mod mem_inspect {
 
 pub mod List1 {
     use std::mem;
+    use std::ops::Deref;
     use crate::LinkedList::List1::Node::Nil;
 
-    pub enum Node<T> {
+    #[derive(Debug, Clone)]
+    pub enum Node<T> where T: Clone {
         Cons(T, Box<Node<T>>),
         Nil,
     }
 
-    pub struct List<T> {
+    #[derive(Debug, Clone)]
+    pub struct List<T: std::clone::Clone> {
         head: Node<T>,
     }
 
-    impl<T> List<T> {
+    impl<T: std::clone::Clone> List<T> {
         pub fn new() -> Self {
             List{
                 head: Node::Nil,
@@ -96,19 +99,20 @@ pub mod List1 {
 
         // return a referece to the first element of the list
         pub fn peek(&self) -> Option<&T> {
-            match self.head.clone() {
-                Node::Nil => None,
-                Node::Cons(element, _) => {
-                    Some(&element)
-                }
+            if let Node::Cons(val, _) = & self.head {
+                Some(val)
+            } else {
+                None
             }
         }
 
-        // uncomment after having implemented the ListIter struct
         // return an interator over the list values
-        //fn iter(&self) -> ListIter<T> {
-        //    unimplemented!()
-        //}
+        fn iter(&self) -> ListIter<T> {
+            let iter = ListIter{
+                current: &self.head
+            };
+            iter.into_iter()
+        }
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
@@ -122,24 +126,27 @@ pub mod List1 {
                 }
             }
 
-            vec.reverse().into_iter().for_each(|x| new_list.push(x));
+            vec.reverse();
+            vec.into_iter().for_each(|x| new_list.push(x));
             new_list
         }
     }
 
-    struct ListIter<'a, T> {
+    #[derive(Debug, Clone)]
+    struct ListIter<'a, T: std::clone::Clone> {
         current: & 'a Node<T>,
     }
     //
-    impl<T> Iterator for ListIter<T> {
+    impl<T: std::clone::Clone> Iterator for ListIter<'_, T> {
         type Item = Node<T>;
     //
         fn next(&mut self) -> Option<Self::Item> {
             let node = self.clone();
             if let Node::Cons(_, next) = node.current{
-                match  next{
+
+                match  next.deref(){
                     Nil => None,
-                    Node::Cons(_, ret) => Some(ret)
+                    Node::Cons(_, ret) => Some(*ret.clone())
                 }
             } else {
                 None
@@ -156,6 +163,7 @@ pub mod List1 {
 pub mod List2 {
     use std::mem;
 
+    #[derive(Debug, Clone)]
     pub struct Node<T> {
         elem: T,
         next: NodeLink<T>,
@@ -163,6 +171,7 @@ pub mod List2 {
 
     type NodeLink<T> = Option<Box<Node<T>>>;
 
+    #[derive(Debug, Clone)]
     pub struct List<T> {
         head: NodeLink<T>,
     }
@@ -171,7 +180,7 @@ pub mod List2 {
     // It allows to move the value of the option into another option and replace it with None
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
-    impl<T> List<T> {
+    impl<T: std::clone::Clone> List<T> {
         pub fn new() -> Self{
             List{
                 head: None
@@ -179,7 +188,7 @@ pub mod List2 {
         }
 
         pub fn push(&mut self, elem: T) {
-            let old_head = self.head.clone();
+            let old_head: NodeLink<T> = Option::clone(&self.head);
             self.head = Some(Box::from(Node{
                 elem,
                 next: old_head
@@ -191,20 +200,21 @@ pub mod List2 {
             match head {
                 None => None,
                 Some(node) => {
-                    let retval = *node.elem;
-                    self.head = *node.next;
-                    retval
+                    let retval = node.elem;
+                    self.head = node.next;
+                    Some(retval)
                 }
             }
         }
 
         pub fn peek(&self) -> Option<&T> {
-            unimplemented!()
+            if let Some(val) = & self.head {
+                Some(&val.elem)
+            } else {
+                None
+            }
         }
 
-        pub fn take(&mut self, n: usize) -> List<T> {
-            unimplemented!()
-        }
     }
 }
 
@@ -214,7 +224,7 @@ pub mod dlist {
     // the node has both a next and a prev link
 
     // type NodeLink = ???
-    // typer NodeBackLink = ???
+    // type NodeBackLink = ???
     // struct DNode<T> {
     //     elem: T,
     //     prev: NodeBackLink,  // which type do we use here?
