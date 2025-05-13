@@ -38,7 +38,7 @@ pub mod mem_inspect {
         // 2. what is the content of b?
         dump_object(&b);
 
-        // how to the the pointer of the wrapped object?
+        // how to the pointer of the wrapped object?
         let ptr = b.as_ref() as *const String as *const u8;
         println!("Pointer: {ptr:?}");
 
@@ -49,6 +49,7 @@ pub mod mem_inspect {
 
 pub mod List1 {
     use std::mem;
+    use crate::LinkedList::List1::Node::Nil;
 
     pub enum Node<T> {
         Cons(T, Box<Node<T>>),
@@ -126,17 +127,25 @@ pub mod List1 {
         }
     }
 
-    //struct ListIter {
-    //    // implement the iterator trait for ListIter
-    //}
+    struct ListIter<'a, T> {
+        current: & 'a Node<T>,
+    }
     //
-    //impl Iterator for ListIter {
-    //    //type Item = ...
+    impl<T> Iterator for ListIter<T> {
+        type Item = Node<T>;
     //
-    //    fn next(&mut self) -> Option<Self::Item> {
-    //        unimplemented!()
-    //    }
-    //}
+        fn next(&mut self) -> Option<Self::Item> {
+            let node = self.clone();
+            if let Node::Cons(_, next) = node.current{
+                match  next{
+                    Nil => None,
+                    Node::Cons(_, ret) => Some(ret)
+                }
+            } else {
+                None
+            }
+        }
+    }
 
     // something that may be useful for the iterator implementation:
     // let a = Some(T);
@@ -145,6 +154,7 @@ pub mod List1 {
 }
 
 pub mod List2 {
+    use std::mem;
 
     pub struct Node<T> {
         elem: T,
@@ -162,7 +172,39 @@ pub mod List2 {
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
     impl<T> List<T> {
-        // same methods as List1
+        pub fn new() -> Self{
+            List{
+                head: None
+            }
+        }
+
+        pub fn push(&mut self, elem: T) {
+            let old_head = self.head.clone();
+            self.head = Some(Box::from(Node{
+                elem,
+                next: old_head
+            }))
+        }
+
+        pub fn pop(&mut self) -> Option<T> {
+            let mut head = self.head.clone();
+            match head {
+                None => None,
+                Some(node) => {
+                    let retval = *node.elem;
+                    self.head = *node.next;
+                    retval
+                }
+            }
+        }
+
+        pub fn peek(&self) -> Option<&T> {
+            unimplemented!()
+        }
+
+        pub fn take(&mut self, n: usize) -> List<T> {
+            unimplemented!()
+        }
     }
 }
 
