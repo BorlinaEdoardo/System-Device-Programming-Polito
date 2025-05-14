@@ -85,7 +85,7 @@ pub mod List1 {
         }
 
         // pop the first element of the list and return it
-        fn pop(&mut self) -> Option<T> {
+        pub fn pop(&mut self) -> Option<T> {
             let old_head = mem::replace(&mut self.head, Node::Nil);
 
             match old_head {
@@ -107,7 +107,7 @@ pub mod List1 {
         }
 
         // return an interator over the list values
-        fn iter(&self) -> ListIter<T> {
+        pub fn iter(&self) -> ListIter<T> {
             let iter = ListIter{
                 current: &self.head
             };
@@ -133,7 +133,7 @@ pub mod List1 {
     }
 
     #[derive(Debug, Clone)]
-    struct ListIter<'a, T: std::clone::Clone> {
+    pub struct ListIter<'a, T: std::clone::Clone> {
         current: & 'a Node<T>,
     }
     //
@@ -142,15 +142,22 @@ pub mod List1 {
     //
         fn next(&mut self) -> Option<Self::Item> {
             let node = self.clone();
+            let mut retval;
             if let Node::Cons(_, next) = node.current{
-
+                self.current = &next;
                 match  next.deref(){
-                    Nil => None,
-                    Node::Cons(_, ret) => Some(*ret.clone())
+                    Nil => {
+                        retval = None;
+                    },
+                    Node::Cons(_, ret) => {
+                        retval = Some(*ret.clone());
+                    }
                 }
             } else {
-                None
+                retval = None;
             }
+
+            retval
         }
     }
 
