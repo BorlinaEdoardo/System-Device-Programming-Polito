@@ -1,5 +1,6 @@
 pub use LinkedList::LinkedList::List1::{List as LinkedList1};
 use LinkedList::LinkedList::List1::Node;
+use LinkedList::LinkedList::mem_inspect::dump_object;
 
 #[test]
 fn push_pop_list(){
@@ -7,6 +8,8 @@ fn push_pop_list(){
     list.push(1);
     list.push(2);
     list.push(3);
+
+    // dump_object(&list); // debug print
 
     let val = list.pop().unwrap();
     assert_eq!(val, 3);
@@ -51,4 +54,18 @@ fn take_iter_list(){
 
      */
 
+}
+
+#[test]
+fn test_list_iter() {
+    let mut list = LinkedList1::new();
+    list.push(1);
+    list.push(2);
+    list.push(3);
+
+    let mut iter = list.iter();
+    assert_eq!(iter.next(), Some(3));
+    assert_eq!(iter.next(), Some(2));
+    assert_eq!(iter.next(), Some(1));
+    assert_eq!(iter.next(), None);
 }
