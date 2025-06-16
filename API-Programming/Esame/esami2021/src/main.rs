@@ -159,7 +159,7 @@ pub struct SingleThreadExecutor {
 }
 
 impl SingleThreadExecutor {
-    /// Crea un nuovo esecutore e restituisce sia l'esecutore che il ricevitore dei task.
+    /// Crea un nuovo esecutore e restituisce sia l'esecutore che il ricevitoare dei task.
     pub fn new() -> (
         Self,
         mpsc::Receiver<Box<dyn FnOnce() + Send + 'static>>,
